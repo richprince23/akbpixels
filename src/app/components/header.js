@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Menu, X, ChevronDown, Camera, Calendar, Newspaper } from 'lucide-react';
+import Link from 'next/link';
 
 const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
     const navigation = [
-      { name: 'Contact', href: '#' },
+      { name: 'Contact', href: '#contact' },
       { name: 'Portfolio', href: '#portfolio' },
       { name: 'Article', href: '#article' },
       { name: 'About', href: '#about' }
@@ -14,24 +14,24 @@ const Header = () => {
     return (
       <header className="absolute top-0 left-0 right-0 z-50">
         <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 items-center justify-between">
-            <div className="flex items-center">
-              <a href="#" className="text-2xl font-bold text-white">
-                AKB Pixels
-              </a>
-            </div>
-  
-            <div className="hidden md:flex md:items-center md:space-x-8">
-              {navigation.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-sm text-white hover:text-gray-300"
-                >
-                  {item.name}
-                </a>
-              ))}
-            </div>
+        <div className="flex h-16 items-center justify-between">
+          <div className="flex items-center">
+            <Link href="/" className="text-2xl font-bold text-white">
+              AKB Pixels
+            </Link>
+          </div>
+
+          <div className="hidden md:flex md:items-center md:space-x-8">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="text-sm text-white hover:text-gray-300"
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
   
             <div className="hidden md:flex md:items-center md:space-x-2">
               <a href="#" className="text-white hover:text-gray-300">

@@ -1,28 +1,34 @@
 'use client'
 
 import { Camera, Video, Image, User } from 'lucide-react';
+// import { useRouter } from 'next/navigation'
+import Link from 'next/link'
+
 
 import Header from '../components/header';
 
 const LandingPage = () => {
+
+    // const router = useRouter();
+
     const projects = [
       {
         title: 'Autumn Wedding',
         category: 'WEDDING',
-        year: '2023',
-        image: '/api/placeholder/400/500'
+        year: '2024',
+        image: '/images/IMG_7990.jpeg'
       },
       {
         title: 'Urban Style',
         category: 'PORTRAIT',
         year: '2023',
-        image: '/api/placeholder/400/500'
+        image: '/images/placeholder/400/500'
       },
       {
         title: 'Nature Vibes',
         category: 'LANDSCAPE',
-        year: '2023',
-        image: '/api/placeholder/400/500'
+        year: '2024',
+        image: '/images/placeholder/400/500'
       }
     ];
   
@@ -55,27 +61,29 @@ const LandingPage = () => {
         
         {/* Hero Section */}
         <div className="relative h-screen">
-          <img src="/api/placeholder/1920/1080" alt="Camera background" className="absolute inset-0 w-full h-full object-cover opacity-50" />
+          <img src="/images/IMG_771845.jpg" alt="Camera background" loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-50 object-top" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black" />
           <div className="relative h-full flex items-center">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4">
-                I'M PROFESSIONAL<br />PHOTOGRAPHER
+              <h1 className="text-4xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4">
+                I&apos;M PROFESSIONAL<br />PHOTOGRAPHER
               </h1>
               <p className="text-xl max-w-2xl mb-8">
-                Based in New York, I specialize in landscape, advertorial and conceptual photography. Here you will be able to find my latest shots.
+                Based in London, I specialize in ceremonial, landscape, advertorial and conceptual photography. Here you will be able to find my latest shots.
               </p>
-              <button className="border border-white px-8 py-3 rounded-full hover:bg-white hover:text-black transition-colors">
+            <Link href={"#contact"}>
+             <button className="border border-white px-8 py-3 rounded-full hover:bg-white hover:text-black transition-colors">
                 Get in touch →
               </button>
+            </Link> 
             </div>
           </div>
         </div>
   
         {/* Services Section */}
-        <div className="py-20 bg-black">
+        <div className="py-20 bg-black" id='services'>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-bold mb-16">SERVICES THAT I PROVIDE</h2>
+            <h2 className="text-4xl font-bold mb-16">SERVICES I PROVIDE</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {services.map((service) => (
                 <div key={service.title} className="bg-zinc-900 p-8 rounded-lg">
@@ -89,16 +97,16 @@ const LandingPage = () => {
         </div>
   
         {/* Selected Projects */}
-        <div className="py-20 bg-zinc-900">
+        <div className="py-20 bg-zinc-900" id='portfolio'>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center mb-16">
               <h2 className="text-4xl font-bold">SELECTED PROJECTS</h2>
-              <button className="text-sm hover:text-gray-300">All projects →</button>
+              <Link href={"/projects"} className="text-sm hover:text-gray-300">More projects →</Link>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {projects.map((project) => (
                 <div key={project.title} className="group relative">
-                  <img src={project.image} alt={project.title} className="w-full aspect-[3/4] object-cover" />
+                  <img src={project.image} alt={project.title} loading="lazy" className="w-full aspect-[3/4] object-cover" />
                   <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
                     <div>
                       <p className="text-sm mb-2">{project.category} • {project.year}</p>
@@ -112,15 +120,17 @@ const LandingPage = () => {
         </div>
   
         {/* Contact Section */}
-        <div className="py-20 bg-black">
+        <div className="py-20 bg-black" id='contact'>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-16">
             <div>
               <h2 className="text-4xl font-bold mb-8">GET IN TOUCH</h2>
               <p className="text-gray-400 mb-8">Feel free to reach out if you want to collaborate with us, or simply have a chat.</p>
               <div className="space-y-4">
-                <p>+1800 123 456</p>
-                <p>support@akbpixels.com</p>
-                <p>5th Avenue, New York, NY.</p>
+               <p><a href='tel:+447399068099'> +447399068099</a> </p>
+                <p><a href='mailto:akbpixels@gmail.com'></a>akbpixels@gmail.com</p>
+               <p>2-4 Deacon Street</p>
+               <p>Elephant Park, Elephant and Castle </p>
+               <p>London</p>
               </div>
             </div>
             <form className="space-y-4">
@@ -132,6 +142,12 @@ const LandingPage = () => {
             </form>
           </div>
         </div>
+
+        <footer>
+            <div className='py-8 px-6 text-center'>
+                <p>Copyright &copy; 2024. Suptle Solutions Ltd</p>
+            </div>
+        </footer>
       </div>
     );
   };
