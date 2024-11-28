@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client"
 
 import React, { useState } from 'react';
@@ -10,84 +11,84 @@ const ProjectsPage = () => {
   const categories = ['ALL', 'WEDDING', 'PORTRAIT', 'LANDSCAPE', 'COMMERCIAL'];
 
   const projects = [
-    {
+  {key: 1,
       title: 'Autumn Wedding',
       category: 'WEDDING',
       year: '2023',
-      client: 'Brown Family',
+      client: 'Jacob Family',
       image: '/images/projects/IMG_7990.jpeg'
     },
-    {
+   {key: 2,
       title: 'Urban Style',
       category: 'PORTRAIT',
       year: '2023',
       client: 'Fashion Magazine',
       image: '/images/projects/IMG_5252.jpg'
     },
-    {
+   {key: 3,
       title: 'City Scape',
       category: 'LANDSCAPE',
       year: '2023',
       client: 'Tourism',
       image: '/images/projects/water3.jpg'
     },
-    {
+   {key: 4,
       title: 'Product Launch',
       category: 'COMMERCIAL',
       year: '2023',
       client: 'Zidas',
       image: '/images/projects/IMG_0681.jpg'
     },
-    {
+   {key: 5,
       title: 'Spring Collection',
       category: 'COMMERCIAL',
       year: '2023',
       client: 'Fashion Brand',
       image: '/images/projects/IMG_2860.jpg'
     },
-    {
+   {key: 6,
       title: 'Home Wedding',
       category: 'WEDDING',
       year: '2023',
-      client: 'Smith Family',
+      client: 'Twum Family',
       image: '/images/projects/IMG_8543.jpeg'
     },
-    {
+   {key: 7,
       title: 'Wedding',
       category: 'WEDDING',
       year: '2023',
-      client: 'Mensah Family',
+      client: 'Twum Family',
       image: '/images/projects/IMG_5362.jpg'
     },
-    {
+   {key: 8,
       title: 'Urban Style',
       category: 'PORTRAIT',
       year: '2023',
       client: 'Fashion Magazine',
       image: '/images/projects/IMG_6624.jpeg'
     },
-    {
+   {key: 9,
       title: 'City Lights',
       category: 'LANDSCAPE',
       year: '2023',
       client: 'Tourism',
       image: '/images/projects/water.jpg'
     },
-    {
+   {key: 10,
       title: 'Product Launch',
       category: 'COMMERCIAL',
       year: '2023',
       client: 'Zidas',
       image: '/images/projects/IMG_0662.jpg'
     },
-    {
+   {key: 11,
       title: 'Spring Collection',
       category: 'COMMERCIAL',
       year: '2023',
       client: 'Fashion Brand',
       image: '/images/projects/IMG_3313.jpg'
     },
-    {
+   {key: 12,
       title: 'Graduation',
       category: 'PORTRAIT',
       year: '2023',
@@ -110,8 +111,7 @@ const ProjectsPage = () => {
           src="/images/IMG_7566.jpg" 
           alt="Projects hero" 
           loading="lazy"
-          className="absolute inset-0 w-full h-full object-cover object-center opacity-50"
-        />
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-50"/>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black" />
         <div className="relative h-full flex items-center">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20">
@@ -137,8 +137,7 @@ const ProjectsPage = () => {
                   activeFilter === category
                     ? 'bg-white text-black'
                     : 'border-white text-white hover:bg-white hover:text-black'
-                } transition-colors`}
-              >
+                } transition-colors`}>
                 {category}
               </button>
             ))}
@@ -151,13 +150,12 @@ const ProjectsPage = () => {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project) => (
-              <div key={project.title} className="group relative">
+              <div key={project.key} className="group relative">
                 <img 
                   src={project.image} 
                   alt={project.title} 
                   loading="lazy"
-                  className="w-full aspect-[3/4] object-cover"
-                />
+                  className="w-full aspect-[3/4] object-cover"/>
                 <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
                   <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform">
                     <p className="text-sm mb-2">{project.category} • {project.year}</p>
