@@ -16,19 +16,19 @@ const LandingPage = () => {
         title: 'Autumn Wedding',
         category: 'WEDDING',
         year: '2024',
-        image: '/images/IMG_7990.jpeg'
+        image: '/images/projects/IMG_7990.jpeg'
       },
       {
         title: 'Urban Style',
         category: 'PORTRAIT',
         year: '2023',
-        image: '/images/placeholder/400/500'
+        image: '/images/projects/water3.jpg'
       },
       {
         title: 'Nature Vibes',
         category: 'LANDSCAPE',
         year: '2024',
-        image: '/images/placeholder/400/500'
+        image: '/images/projects/water2.jpg'
       }
     ];
   

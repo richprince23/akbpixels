@@ -5,8 +5,8 @@ const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
     const navigation = [
-      { name: 'Contact', href: '#contact' },
-      { name: 'Portfolio', href: '#portfolio' },
+      { name: 'Contact', href: '/#contact' },
+      { name: 'Portfolio', href: '/#portfolio' },
       { name: 'Article', href: '#article' },
       { name: 'About', href: '#about' }
     ];
