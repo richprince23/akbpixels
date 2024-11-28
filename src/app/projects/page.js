@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Header from '../components/header';
+import Link from 'next/link';
 
 const ProjectsPage = () => {
   const [activeFilter, setActiveFilter] = useState('ALL');
@@ -14,42 +15,84 @@ const ProjectsPage = () => {
       category: 'WEDDING',
       year: '2023',
       client: 'Brown Family',
-      image: '/api/placeholder/600/800'
+      image: '/images/projects/IMG_7990.jpeg'
     },
     {
       title: 'Urban Style',
       category: 'PORTRAIT',
       year: '2023',
       client: 'Fashion Magazine',
-      image: '/api/placeholder/600/800'
+      image: '/images/projects/IMG_5252.jpg'
     },
     {
-      title: 'City Lights',
+      title: 'City Scape',
       category: 'LANDSCAPE',
       year: '2023',
-      client: 'NYC Tourism',
-      image: '/api/placeholder/600/800'
+      client: 'Tourism',
+      image: '/images/projects/water3.jpg'
     },
     {
       title: 'Product Launch',
       category: 'COMMERCIAL',
       year: '2023',
-      client: 'Tech Corp',
-      image: '/api/placeholder/600/800'
+      client: 'Zidas',
+      image: '/images/projects/IMG_0681.jpg'
     },
     {
       title: 'Spring Collection',
       category: 'COMMERCIAL',
       year: '2023',
       client: 'Fashion Brand',
-      image: '/api/placeholder/600/800'
+      image: '/images/projects/IMG_2860.jpg'
     },
     {
-      title: 'Mountain Wedding',
+      title: 'Home Wedding',
       category: 'WEDDING',
       year: '2023',
       client: 'Smith Family',
-      image: '/api/placeholder/600/800'
+      image: '/images/projects/IMG_8543.jpeg'
+    },
+    {
+      title: 'Wedding',
+      category: 'WEDDING',
+      year: '2023',
+      client: 'Mensah Family',
+      image: '/images/projects/IMG_5362.jpg'
+    },
+    {
+      title: 'Urban Style',
+      category: 'PORTRAIT',
+      year: '2023',
+      client: 'Fashion Magazine',
+      image: '/images/projects/IMG_6624.jpeg'
+    },
+    {
+      title: 'City Lights',
+      category: 'LANDSCAPE',
+      year: '2023',
+      client: 'Tourism',
+      image: '/images/projects/water.jpg'
+    },
+    {
+      title: 'Product Launch',
+      category: 'COMMERCIAL',
+      year: '2023',
+      client: 'Zidas',
+      image: '/images/projects/IMG_0662.jpg'
+    },
+    {
+      title: 'Spring Collection',
+      category: 'COMMERCIAL',
+      year: '2023',
+      client: 'Fashion Brand',
+      image: '/images/projects/IMG_3313.jpg'
+    },
+    {
+      title: 'Graduation',
+      category: 'PORTRAIT',
+      year: '2023',
+      client: 'Lady',
+      image: '/images/projects/IMG_7645.jpeg'
     }
   ];
 
@@ -64,15 +107,15 @@ const ProjectsPage = () => {
       {/* Hero Section */}
       <div className="relative h-[50vh]">
         <img 
-          src="/api/placeholder/1920/1080" 
+          src="/images/IMG_7566.jpg" 
           alt="Projects hero" 
           loading="lazy"
-          className="absolute inset-0 w-full h-full object-cover opacity-50"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-50"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black" />
         <div className="relative h-full flex items-center">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20">
-            <h1 className="text-6xl md:text-7xl font-bold tracking-tight mb-4">
+            <h1 className="text-6xl md:text-7xl font-bold tracking-tight mb-4 text-center">
               MY WORK
             </h1>
             <p className="text-xl max-w-2xl">
@@ -135,9 +178,11 @@ const ProjectsPage = () => {
           <p className="text-gray-400 mb-8">
             Let&apos;s create something amazing together. Get in touch to discuss your vision.
           </p>
+          <Link href={"/#contact"}>
           <button className="bg-white text-black px-8 py-3 rounded hover:bg-gray-200">
             Contact me →
           </button>
+          </Link>
         </div>
       </div>
       {/* footer */}
