@@ -52,7 +52,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div v-for="project in projects" :key="project.title" class="group relative">
             <img
-              :src="(project.image)"
+              :src="project.image"
               :alt="project.title"
               loading="lazy"
               class="w-full aspect-[3/4] object-cover"
@@ -108,32 +108,39 @@
 import { ref } from 'vue'
 import { Camera, Video, Image, User } from 'lucide-vue-next'
 import Header from "@/components/header.vue";
+import img1 from '@/assets/images/projects/IMG_7990.jpeg'
+import img2 from '@/assets/images/projects/water3.jpg'
+import img3 from '@/assets/images/projects/water2.jpg'
+
 
 const projects = ref([
   {
     title: 'Autumn Wedding',
     category: 'WEDDING',
     year: '2024',
-    image: '/src/images/projects/IMG_7990.jpeg'
+    // image: '../assets/images/projects/IMG_7990.jpeg'
+    image: img1
   },
   {
     title: 'Urban Style',
     category: 'PORTRAIT',
     year: '2023',
-    image: '/src/assets/images/projects/water3.jpg'
+    // image: 'images/projects/water3.jpg'
+    image: img2
   },
   {
     title: 'Nature Vibes',
     category: 'LANDSCAPE',
     year: '2024',
-    image: '/src/assets/images/projects/water2.jpg'
+    // image: new URL('../assets/images/projects/IMG_7990.jpeg', import.meta.url).href
+    image: img3
   }
 ])
 
 
-   const getImg = function (index) {
+   const getImg = function (img) {
     console.log(projects.image);
-      return (`@/assets/${this.projects.image}`)
+      return (`/assets/${img}`)
     }
 
 
